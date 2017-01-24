@@ -1,0 +1,32 @@
+﻿@model Testasp.Models.Student
+@{
+    ViewBag.Title = "Details";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Details</h2>
+
+<h5>Last Name       : </h5> @Model.LastName <br>
+<h5>First Mid Name  : </h5> @Model.FirstMidName<br>
+<h5>Enrollment Date : </h5> @Model.EnrollmentDate <br>
+
+<h6>Enrollments  : </h6> <br>
+<table class="table">
+    <thead>
+    <tr>
+        <th>Course Title</th>
+        <th>Grade</th>
+    </tr>
+    </thead>
+    <tbody>
+    @foreach (var enrollment in Model.Enrollments)
+    {
+        <tr>
+            <td>@enrollment.Course.Title</td>
+            <td>@enrollment.Grade</td>
+        </tr>
+    }    
+    </tbody>
+</table>
+
+
